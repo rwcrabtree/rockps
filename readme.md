@@ -1,1 +1,2 @@
 This is for the rock paper scissors project in Odin. This is the first project since starting JavaScript. I see it being a lot of if/else statements and variable declaration. I will set up counters to determine the number of wins each player has and a loop to replay the game until a player completes best of 5, terminating early if a player wins 3, as the opponent woun't be able to win at that point.
+This edit is just to follow the directions in "Git Basics" in the Odin Project for me to learn git.
