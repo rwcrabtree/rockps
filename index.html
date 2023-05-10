@@ -4,10 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>rockps</title>
 </head>
 <body>
     <script>
+        function getComputerChoice () {
+            const choices = ["Rock", "Paper", "Scissors"];
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+        }
+         
+        function getPlayerChoice() {
+            const playerChoice = prompt("Choose rock, paper, or scissors: ");
+            if (playerChoice === "rock" || 
+                playerChoice === "Rock" || 
+                playerChoice === "ROCK" || 
+                playerChoice === "paper" || 
+                playerChoice === "Paper" || 
+                playerChoice === "PAPER" || 
+                playerChoice === "scissors" || 
+                playerChoice === "Scissors" || 
+                playerChoice === "SCISSORS"){
+                return playerChoice;
+            } else {
+                alert("Invalid choice, please choose rock, paper, or scissors.");
+                return getPlayerChoice();
+            }
+        }
+
+        function playRound() {
+            const playerChoice = getPlayerChoice();
+            const computerChoice = getComputerChoice();
+
+            if (playerChoice === computerChoice){
+                alert("Its a tie! You chose the same.");
+                playRound();
+            } else if (playerChoice === "rock" ||
+                       playerChoice === "Rock" ||
+                       playerChoice === "ROCK" &&
+                       computerChoice === "Scissors"){
+                    alert("Rock beats scissors! You win this round.");
+            } else if (playerChoice === "Paper" ||
+                       playerChoice === "paper" ||
+                       playerChoice === "PAPER" &&
+                       computerChoice === "Rock") {
+                        alert("Paper beats rock! You win this round.");
+            } else if (playerChoice === "Scissors" ||
+                       playerChoice === "scissors" ||
+                       playerChoice === "SCISSORS" &&
+                       computerChoice === "Paper") {
+                        alert("Scissors beats paper! You win this round.");
+            } else if (playerChoice === "rock" ||
+                       playerChoice === "Rock" ||
+                       playerChoice === "ROCK" &&
+                       computerChoice === "Paper") {
+                        alert("Paper beats rock...you lose this round.")
+            } else if (playerChoice === "Paper" ||
+                       playerChoice === "paper" ||
+                       playerChoice === "PAPER" &&
+                       computerChoice === "Scissors"){
+                        alert("Scissors beats paper...you lose this round.")
+            } else if (playerChoice === "Scissors" ||
+                       playerChoice === "scissors" ||
+                       playerChoice === "SCISSORS" &&
+                       computerChoice === "Rock"){
+                        alert("Rock beats scissors...you lose this round.")
+            } 
+        }
+
+        playRound();
         
     </script>
 </body>
